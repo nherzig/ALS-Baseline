@@ -11,5 +11,5 @@ main.o: main.cpp
 main: main.o
 	$(CC) $(CFLAGS) $(LIBS) $(INCLUDE) main.o -o main
 
-clean: main.o
+clean:
 	rm main.o
