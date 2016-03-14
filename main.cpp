@@ -51,15 +51,27 @@ int main(){
 	SpMat temp(N,N);
 
 
-  	// VectorXd x = chol.solve(b);         // use the factorization to solve for the given right hand side
-	for(int ii = 0; ii < maxIter; ii++)
+  	VectorXd x(100);
+
+  	for(int ii = 0; ii < maxIter; ii++)
 	{
+		// decomposition
 		W.setFromTriplets(weights.begin(),weights.end());
 		SimplicialCholesky<SpMat> chol(W+Dset);
-		chol.solve(sig.cwiseProduct(vweights));
-	
-
-
+		x = chol.solve(sig.cwiseProduct(vweights));
+		// update
+		for(int jj = 0; jj < N; jj++)
+		{
+			if(sig[jj] > x[jj])
+			{
+				vweights[jj] = p;
+			}
+			else
+			{
+				vweights[jj] = 1-p;
+			}
+			weights[jj] =  T(jj,jj,vweights[jj]);
+		}
 	}
 
 	return 0;
