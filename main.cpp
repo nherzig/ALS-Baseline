@@ -57,14 +57,13 @@ int main(){
 	D.setFromTriplets(difftriplet.begin(),difftriplet.end());
 
 	SpMat Dset(N,N);
-	double lambda = 100, p = 0.01; 
+	double lambda = 10000000, p = 0.01; 
 	Dset = lambda*D.transpose()*D;
 	cout << "I have finished setup" << endl;
 
 
 	int maxIter = 5;
 	SpMat temp(N,N);
-
 
   	VectorXd x(N);
 
