@@ -8,8 +8,11 @@ all: main
 main.o: main.cpp
 	$(CC) $(CFLAGS) $(LIBS) $(INCLUDE) -c main.cpp -o main.o
 
-main: main.o
+als.o: als.cpp
+	$(CC) $(CFLAGS) $(LIBS) $(INCLUDE) -c als.cpp -o als.o
+
+main: main.o als.o
 	$(CC) $(CFLAGS) $(LIBS) $(INCLUDE) main.o -o main
 
 clean:
-	rm main.o
+	rm *.o
