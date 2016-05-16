@@ -53,11 +53,11 @@ typedef std::shared_ptr<fftw_complex> cp;
 using namespace std;
 
 int main(){
-	// Baseline subtraction using Eigen attempt 2.0
-	int N = 10000;
+	int N;
+
 	// in data
 	FILE * sfile;
-	sfile = fopen("baselinesub","r+");
+	sfile = fopen("input","r+");
 	double readtemp;
 	fread(&N,4,1,sfile);
 	cout << N << endl;
@@ -73,7 +73,7 @@ int main(){
 	// parameters
 	cp out(new fftw_complex[N]);
 	double smooth = 10000000;
-	double p = 0.01;
+	double p = 0.0001;
 	int maxIter = 5;
 
 	als(in,out,N,smooth,p,maxIter);
