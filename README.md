@@ -6,6 +6,8 @@ This is a stripped down implementation of the asymmetric least squares (ALS) alg
 
 I have included a Matlab script that can generate some test data from Brownian motion data. The script generates, saves the data, and opens the baseline subtracted data. There are two parameter, lambda and p, which the user needs to set to properly use the algorithm, I recommend reading the paper to learn how best to set them.
 
+This implementation is intended solely for research purposes.
+
 ## Dependencies
 Eigen: http://eigen.tuxfamily.org
 
