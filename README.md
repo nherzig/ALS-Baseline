@@ -1,6 +1,6 @@
 # Asymmetric Least Squares Baseline Subtraction C++ Implementation
 
-[![License](https://img.shields.io/badge/license-BSD-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/53877623.svg)](https://zenodo.org/badge/latestdoi/53877623)
 
 This is a stripped down implementation of the asymmetric least squares (ALS) algorithm for baseline subtraction, based off of the paper by Paul H. C. Eilers Hans F.M. Buelens, Baseline Correction with Asymmetric Least Squares Smoothing. This C++ implementation uses the Eigen library for its sparse representations and solvers.
 
